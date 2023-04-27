@@ -4,14 +4,34 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  height: 100vh;
+  font-family: "Lusitana";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@layer base {
+  h1 {
+    font-family: "Moul", sans-serif;
+    font-size: xx-large;
+  }
+  h2 {
+    font-family: "Lusitana";
+    font-size: x-large;
+    font-weight: bold;
+  }
+  h3 {
+    font-family: "Lusitana";
+    font-size: large;
+    font-weight: bold;
+  }
 }
