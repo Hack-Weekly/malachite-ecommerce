@@ -9,6 +9,7 @@ import Profile from "./components/Profile";
 import MyAuctions from "./components/MyAuctions";
 import NewAuction from "./components/NewAuction";
 import Products from "./components/Products";
+import ProductPage from "./components/ProductPage";
 
 const App: React.FC = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -31,6 +32,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Products />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/myauctions" element={<MyAuctions />} />
+          <Route path="/myauctions/:id" element={<ProductPage />} />
           <Route path="/newauction" element={<NewAuction />} />
         </Routes>
       </div>
