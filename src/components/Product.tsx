@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import { ProductType } from "../types";
+import { Link } from "react-router-dom";
 
 const Product: React.FC<ProductType> = (product: ProductType) => {
 
@@ -17,7 +18,7 @@ const Product: React.FC<ProductType> = (product: ProductType) => {
   };
 
   return (
-    <div className="product">
+    <Link to={`/myauctions/${product.id}`} className="product">
       <h3>{product.name}</h3>
       <h5>{product.desc}</h5>
       <img src={product.img} alt="product" />
@@ -31,7 +32,7 @@ const Product: React.FC<ProductType> = (product: ProductType) => {
         value={price === "" ? "" : price.toFixed(2)}
         onChange={handleChange}
       />
-    </div>
+    </Link>
   );
 };
 
