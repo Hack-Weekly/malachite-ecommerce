@@ -1,9 +1,11 @@
 import React, { ChangeEvent, useState } from "react";
-import placeholder from "../images/placeholder.webp";
+import { ProductType } from "../types";
+import { Link } from "react-router-dom";
 
-const Product: React.FC = () => {
+const Product: React.FC<ProductType> = (product: ProductType) => {
+
   const [price, setPrice] = useState<number | "">("");
-
+  
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value;
     const numericValue = parseFloat(inputValue);
@@ -16,11 +18,11 @@ const Product: React.FC = () => {
   };
 
   return (
-    <div className="product">
-      <h3>Pikachu</h3>
-      <h5>Will be useful in you adventure</h5>
-      <img src={placeholder} alt="product" />
-      <p>Current price: $999</p>
+    <Link to={`/myauctions/${product.id}`} className="product">
+      <h3>{product.name}</h3>
+      <h5>{product.desc}</h5>
+      <img src={product.img} alt="product" />
+      <p>Current price: ${product.price}</p>
       <p> Your auction</p>
       <input
         id="priceInput"
@@ -30,7 +32,7 @@ const Product: React.FC = () => {
         value={price === "" ? "" : price.toFixed(2)}
         onChange={handleChange}
       />
-    </div>
+    </Link>
   );
 };
 
